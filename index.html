@@ -2002,6 +2002,11 @@
       pointer-events: none;
     }
 
+    .app-loader-logo {
+      width: 120px;
+      height: 120px;
+    }
+
 
 
 
@@ -2349,7 +2354,7 @@
         earlyLoader.className = 'app-loader';
         earlyLoader.id = 'earlyLoader';
         earlyLoader.innerHTML = `
-          <div style="color: white; font-size: 2rem; font-weight: bold; letter-spacing: 2px;">moo</div>
+          <img src="momo.png" alt="Loading" class="app-loader-logo" />
         `;
         document.body.appendChild(earlyLoader);
 
