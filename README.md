@@ -1,6 +1,6 @@
 <div align="center">
   <img src="momo.png" alt="Chat Logo" width="80" height="80" />
-  <h1>chat-main</h1>
+  <h1>Momo Chat</h1>
   <p><strong>A private two-person real-time chat app with a 5-channel notification system and ESP32 hardware integration.</strong></p>
 
   ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)
