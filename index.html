@@ -91,6 +91,7 @@
       flex-shrink: 0;
       background: #000000;
       display: flex;
+      min-height: 62px;
     }
 
     .header-side-tab {
@@ -105,7 +106,7 @@
 
     .header-side-tab .rotated {
       font-family: 'DM Mono', monospace;
-      font-size: 6px;
+      font-size: 8px;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.5);
@@ -118,56 +119,79 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      position: relative;
+      padding: 7px 12px 9px 12px;
+      overflow: visible;
     }
 
     /* Masthead styles */
     .masthead-content {
-      flex: 1;
-      padding: 4px 14px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 0;
+      gap: 5px;
+      padding-right: 110px;
     }
 
     .masthead-top {
       display: flex;
-      align-items: baseline;
-      gap: 7px;
-      padding-bottom: 2px;
+      align-items: center;
+      gap: 10px;
     }
 
     .masthead-title-wrapper {
       display: flex;
-      align-items: baseline;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
       border-bottom: 1px solid #333;
-      padding-bottom: 2px;
-      width: fit-content;
+      padding-bottom: 3px;
+      flex-shrink: 0;
     }
 
     .masthead-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
+      font-size: 17px;
+      font-weight: 400;
       letter-spacing: 0.02em;
       color: #fff;
-      line-height: 1;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .masthead-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .masthead-status.online {
+      color: #fff;
+    }
+
+    .masthead-status.offline {
+      color: #666;
     }
 
     .masthead-bottom {
       display: flex;
       align-items: center;
+      gap: 0;
+      flex-wrap: nowrap;
+      overflow: hidden;
     }
 
     .masthead-subline-item {
       font-family: 'DM Mono', monospace;
-      font-size: 8px;
+      font-size: 10px;
       color: #666;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 0 7px;
+      padding: 0 9px;
       border-right: 1px solid #333;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .masthead-subline-item:first-child {
@@ -187,64 +211,58 @@
       color: #666 !important;
       font-weight: 500 !important;
       font-family: 'DM Mono', monospace !important;
-      font-size: 8px !important;
-      letter-spacing: 0.07em !important;
+      font-size: 10px !important;
+      letter-spacing: 0.05em !important;
       text-transform: uppercase !important;
       line-height: inherit !important;
     }
 
     .masthead-actions {
       position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 12px;
+      top: 7px;
       display: flex;
-      gap: 4px;
-      align-items: center;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
     }
 
-    .masthead-actions::before {
-      content: '';
-      width: 1px;
-      height: 20px;
-      background: #333;
-      margin-right: 5px;
+    .masthead-actions-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
     }
 
     .masthead-meta {
       display: flex;
       flex-direction: column;
       gap: 1px;
-      margin-right: 5px;
-    }
-
-    .masthead-meta-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 8px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #aaa;
-      line-height: 1.2;
+      align-items: flex-end;
+      text-align: right;
     }
 
     .masthead-meta-sub {
       font-family: 'DM Mono', monospace;
-      font-size: 8px;
-      letter-spacing: 0.08em;
+      font-size: 9px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #666;
       line-height: 1.2;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
     }
 
     .masthead-tag {
       text-decoration: none;
-      font-size: 16px;
+      font-size: 17px;
       color: #ccc;
       background: #111;
       border: none;
       padding: 0;
-      height: 28px;
-      width: 28px;
+      height: 30px;
+      width: 30px;
       cursor: pointer;
       position: relative;
       transition: background 0.15s, transform 0.15s;
@@ -253,6 +271,7 @@
       justify-content: center;
       line-height: 1;
       clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+      flex-shrink: 0;
     }
 
     .masthead-tag:active {
@@ -392,8 +411,8 @@
     }
 
     .bubble-text {
-      font-size: var(--bubble-font-size, 15px);
-      line-height: 1.25;
+      font-size: var(--bubble-font-size, 16px);
+      line-height: 1.35;
       color: var(--text);
       white-space: pre-wrap;
     }
@@ -410,7 +429,7 @@
     }
 
     .emoji-only {
-      font-size: 36px !important;
+      font-size: 40px !important;
       line-height: 1.2;
       letter-spacing: -1px;
       /* Tighten up emoji spacing to prevent wrapping gaps */
@@ -459,15 +478,15 @@
     }
 
     .bubble-reply-context {
-      padding: 6px 10px;
+      padding: 7px 11px;
       margin-top: -2px;
-      margin-bottom: 8px;
-      font-size: 13px;
+      margin-bottom: 9px;
+      font-size: 14px;
       cursor: pointer;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      gap: 12px;
+      gap: 13px;
       background: #000000;
       border-left: 2px solid #555;
     }
@@ -488,7 +507,7 @@
     .bubble-reply-context .reply-sender {
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 11px;
+      font-size: 12px;
       opacity: 0.7;
     }
 
@@ -505,12 +524,12 @@
       line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     .reply-thumbnail {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       object-fit: cover;
       flex-shrink: 0;
     }
@@ -519,7 +538,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 3px 8px;
+      padding: 4px 9px;
       border-left: 2px solid #555;
       background: rgba(255,255,255,0.04);
     }
@@ -528,20 +547,20 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
       overflow: hidden;
       min-width: 0;
     }
 
     .reply-preview-sender {
       color: #FFFFFF;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
     }
 
     .reply-preview-text {
       color: #FFFFFF;
-      font-size: 13px;
+      font-size: 14px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -549,10 +568,10 @@
     }
 
     .reply-preview-img {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       object-fit: cover;
-      margin-left: 10px;
+      margin-left: 11px;
       flex-shrink: 0;
     }
 
@@ -560,11 +579,11 @@
       color: #ccc;
       cursor: pointer;
       padding: 0;
-      font-size: 14px;
+      font-size: 15px;
       background: #111;
       border: none;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -616,35 +635,14 @@
     }
 
     .bubble-attachment {
-      max-width: 180px;
-      max-height: 200px;
+      max-width: 240px;
+      max-height: 280px;
       object-fit: contain;
       border-radius: 0;
       margin-bottom: 4px;
       display: block;
       cursor: pointer;
       position: relative;
-    }
-
-    /* Three-dot menu button for images/stickers */
-    .media-menu-btn {
-      width: 28px;
-      height: 28px;
-      background: #111;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ccc;
-      font-size: 14px;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: background 0.15s, transform 0.15s;
-    }
-
-    .media-menu-btn:active {
-      transform: scale(0.95);
-      background: #1a1a1a;
     }
 
     .media-wrapper {
@@ -837,11 +835,11 @@
     .edit-indicator {
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
+      gap: 7px;
+      padding: 4px 9px;
       background: rgba(255, 255, 255, 0.04);
       border-left: 2px solid #555;
-      font-size: 10px;
+      font-size: 11px;
       color: rgba(255,255,255,0.5);
       letter-spacing: 0.05em;
     }
@@ -850,18 +848,18 @@
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .edit-cancel-btn {
       color: #ccc;
       cursor: pointer;
       padding: 0;
-      font-size: 14px;
+      font-size: 15px;
       background: #111;
       border: none;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -876,7 +874,7 @@
     }
 
     .edited-label {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
       font-style: italic;
       margin-top: 2px;
@@ -896,7 +894,7 @@
     }
 
     .deleted-message {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-secondary);
       font-style: italic;
       opacity: 1;
@@ -910,12 +908,12 @@
       position: absolute;
       background: #111;
       border: none;
-      padding: 4px 0;
+      padding: 5px 0;
       display: none;
       flex-direction: column;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      min-width: 120px;
+      min-width: 130px;
       clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
       z-index: 10;
       /* Local z-index within bubble-row context */
@@ -926,19 +924,19 @@
     }
 
     .message-action-item {
-      padding: 10px 16px;
-      font-size: 13px;
+      padding: 11px 17px;
+      font-size: 14px;
       color: var(--text);
       cursor: pointer;
 
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
     }
 
     .message-action-item i {
-      width: 14px;
-      font-size: 13px;
+      width: 15px;
+      font-size: 14px;
       color: var(--text-secondary);
     }
 
@@ -1060,10 +1058,10 @@
       border-radius: 0;
       background: var(--bg);
       border: 0;
-      padding: 0 10px 0px 10px;
+      padding: 0 12px 0px 12px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
     }
 
     textarea.cmd-input:focus {
@@ -1081,10 +1079,10 @@
       outline: none;
       resize: none;
       color: var(--text);
-      font-size: var(--bubble-font-size, 15px);
-      line-height: 1.3;
-      min-height: 28px;
-      max-height: 120px;
+      font-size: var(--bubble-font-size, 16px);
+      line-height: 1.35;
+      min-height: 32px;
+      max-height: 130px;
       user-select: text;
       font-family: inherit;
       width: 100%;
@@ -1094,7 +1092,7 @@
 
     textarea.cmd-input::placeholder {
       color: rgba(154, 160, 180, 0.5);
-      font-size: 12px;
+      font-size: 13px;
       font-family: 'DM Mono', monospace;
     }
 
@@ -1107,20 +1105,20 @@
     .toolbar-group {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
 
     .btn-build {
       display: flex;
       align-items: center;
-      gap: 6px;
-      height: 30px;
-      padding: 0 10px;
+      gap: 7px;
+      height: 34px;
+      padding: 0 12px;
       border-radius: 0;
       background: #111;
       border: 1px solid #2a2a2a;
       color: #ccc;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       cursor: pointer;
       user-select: none;
@@ -1145,7 +1143,7 @@
       background: #0a0a0a;
       border: none;
       border-radius: 0;
-      padding: 4px;
+      padding: 5px;
       display: none;
       flex-direction: column;
       z-index: 100;
@@ -1163,9 +1161,9 @@
     .build-menu-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      font-size: 13px;
+      gap: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
       color: #ccc;
       cursor: pointer;
       border-radius: 0;
@@ -1174,14 +1172,14 @@
 
     .build-menu-item i {
       color: #888;
-      font-size: 14px;
-      width: 16px;
+      font-size: 15px;
+      width: 18px;
       text-align: center;
     }
 
     .btn-icon {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1203,9 +1201,13 @@
       transform: scale(0.92);
     }
 
+    .btn-icon i {
+      font-size: 18px;
+    }
+
     .btn-flash {
-      height: 30px;
-      min-width: 28px;
+      height: 34px;
+      min-width: 32px;
       border-radius: 0;
       background: #111;
       border: 1px solid #2a2a2a;
@@ -1213,9 +1215,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 8px;
+      padding: 0 9px;
       cursor: pointer;
       transition: background 0.15s;
+    }
+
+    .btn-flash i {
+      font-size: 18px;
     }
 
     .btn-flash:active {
@@ -1224,8 +1230,8 @@
     }
 
     .btn-send {
-      height: 30px;
-      width: 30px;
+      height: 34px;
+      width: 34px;
       border-radius: 0;
       background: #111;
       border: 1px solid #2a2a2a;
@@ -1236,6 +1242,10 @@
       color: #ccc;
       box-sizing: border-box;
       transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-send i {
+      font-size: 18px;
     }
 
     .btn-send:active {
@@ -1249,9 +1259,8 @@
     #stickerBtn,
     #emojiBtn,
     .btn-send,
-    .settings-btn,
-    .media-menu-btn {
-      clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    .settings-btn {
+      clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
       border: none;
     }
 
@@ -1637,9 +1646,11 @@
       display: none;
       flex-direction: column;
       z-index: 210;
-      clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+      border-radius: 12px;
       box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6);
       animation: pickerSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      box-sizing: border-box;
     }
 
     @keyframes pickerSlideUp {
@@ -1672,6 +1683,8 @@
       text-transform: uppercase;
       flex-shrink: 0;
       font-family: 'DM Mono', monospace;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .sticker-header i,
@@ -1690,12 +1703,14 @@
     .emoji-tabs {
       display: flex;
       gap: 6px;
-      padding: 12px 14px;
+      padding: 12px 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       flex-shrink: 0;
       overflow-x: auto;
       overflow-y: hidden;
       scrollbar-width: thin;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .sticker-tabs::-webkit-scrollbar,
@@ -1773,9 +1788,13 @@
     .sticker-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
       gap: 6px;
-      padding: 14px;
+      padding: 10px;
       overflow-y: auto;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .emoji-grid {
@@ -1793,7 +1812,21 @@
       padding: 0 14px 14px;
     }
 
-    .sticker-item,
+    .sticker-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      aspect-ratio: 1;
+      width: 100%;
+    }
+
     .emoji-item {
       aspect-ratio: 1;
       cursor: pointer;
@@ -1802,16 +1835,22 @@
       justify-content: center;
       font-size: 24px;
       background: rgba(255, 255, 255, 0.03);
-      clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+      border-radius: 6px;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       border: 1px solid transparent;
+      box-sizing: border-box;
     }
 
     .sticker-item:hover,
     .emoji-item:hover {
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
+    }
+
+    .sticker-item:active,
+    .emoji-item:active {
+      transform: scale(0.95);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .sticker-item:active,
@@ -1821,9 +1860,10 @@
     }
 
     .sticker-img {
-      width: 85%;
-      height: 85%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      display: block;
       filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
@@ -2065,27 +2105,31 @@
             </div>
           </div>
           <div class="masthead-bottom">
-            <div class="masthead-subline-item"><b>Model</b> <span id="partnerDeviceModel">NULL</span></div>
-            <div class="masthead-subline-item"><b>DUR</b> <span id="lastSeenCountdown">—</span></div>
+            <div class="masthead-subline-item"><b>MO</b> <span id="partnerDeviceModel">NULL</span></div>
+            <div class="masthead-subline-item"><b>DU</b> <span id="lastSeenCountdown">—</span></div>
           </div>
         </div>
         <div class="masthead-actions">
-          <div class="masthead-meta">
-            <div class="masthead-meta-title">Status: <span id="statusText" style="color:#fff;">Offline</span></div>
-            <div class="masthead-meta-sub" id="lastSeenTimestamp">—</div>
+          <div class="masthead-actions-row">
+            <a class="masthead-tag" href="https://pic.moo.qzz.io" target="_blank"><i class="ph ph-image"></i></a>
+            <a class="masthead-tag" href="https://mo.moo.qzz.io" target="_blank"><i class="ph ph-video-camera"></i></a>
+            <a class="masthead-tag" href="https://puzzle.moo.qzz.io" target="_blank"><i class="ph ph-game-controller"></i></a>
+            <div class="dropdown-container">
+              <div class="masthead-tag" id="activeBtn"><i class="ph ph-faders-horizontal"></i></div>
+              <div class="dropdown-menu" id="activeDropdown">
+                <div class="dropdown-item" id="callBtn"><i class="ph ph-phone"></i><span>Call</span></div>
+                <div class="dropdown-item" id="menuFontSize"><i class="fa-solid fa-text-height"></i><span>Font size</span></div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item" id="menuClearChat"><i class="fa-solid fa-broom"></i><span>Clear Chat</span></div>
+                <div class="dropdown-item" id="menuExport"><i class="fa-solid fa-file-export"></i><span>Export Chat</span></div>
+                <div class="dropdown-item" id="menuUpdatePin"><i class="fa-solid fa-key"></i><span>Update PIN</span></div>
+              </div>
+            </div>
           </div>
-          <a class="masthead-tag" href="https://pic.moo.qzz.io" target="_blank"><i class="ph ph-image"></i></a>
-          <a class="masthead-tag" href="https://mo.moo.qzz.io" target="_blank"><i class="ph ph-video-camera"></i></a>
-          <a class="masthead-tag" href="https://puzzle.moo.qzz.io" target="_blank"><i class="ph ph-game-controller"></i></a>
-          <div class="dropdown-container">
-            <div class="masthead-tag" id="activeBtn"><i class="ph ph-faders-horizontal"></i></div>
-            <div class="dropdown-menu" id="activeDropdown">
-              <div class="dropdown-item" id="callBtn"><i class="ph ph-phone"></i><span>Call</span></div>
-              <div class="dropdown-item" id="menuFontSize"><i class="fa-solid fa-text-height"></i><span>Font size</span></div>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-item" id="menuClearChat"><i class="fa-solid fa-broom"></i><span>Clear Chat</span></div>
-              <div class="dropdown-item" id="menuExport"><i class="fa-solid fa-file-export"></i><span>Export Chat</span></div>
-              <div class="dropdown-item" id="menuUpdatePin"><i class="fa-solid fa-key"></i><span>Update PIN</span></div>
+          <div class="masthead-meta">
+            <div class="masthead-meta-sub">
+              <span class="masthead-status offline" id="statusIndicator">OFF</span>
+              <span id="lastSeenTimestamp">—</span>
             </div>
           </div>
         </div>
@@ -2217,8 +2261,8 @@
         <div class="settings-body">
           <div class="settings-page" id="pageFontSize">
             <div class="size-preview" id="sizePreview">Aa</div>
-            <input type="range" class="settings-slider" min="12" max="22" value="15" id="fontSizeSlider">
-            <div class="slider-value" id="fontSizeValue">15px</div>
+            <input type="range" class="settings-slider" min="14" max="24" value="16" id="fontSizeSlider">
+            <div class="slider-value" id="fontSizeValue">16px</div>
           </div>
           <div class="settings-page" id="pageClearChat">
             <div class="settings-msg">This will permanently delete all messages for both users.</div>
@@ -2484,7 +2528,7 @@
 
         // User settings state
         let userSettings = {
-          fontSize: 15,
+          fontSize: 16,
           pin: ''
         };
         const userSettingsRef = ref(db, 'settings/shared');
@@ -2802,9 +2846,6 @@
           stickerUrls.forEach(url => {
             const item = document.createElement('div');
             item.className = 'sticker-item';
-            // Set content-visibility for heavy grids
-            item.style.contentVisibility = 'auto';
-            item.style.containIntrinsicSize = '60px'; // Approx height
 
             // Generate img tag with data-src for Lazy Loading
             item.innerHTML = `<img data-src="${url}" class="sticker-img" alt="Sticker" />`;
@@ -3283,7 +3324,7 @@
         if (currentUser === "Sayem") {
           userName.textContent = "Shajeda";
         } else {
-          userName.textContent = "Sayem";
+          userName.textContent = "Honey"; // Display nickname instead of "Sayem"
         }
 
         var otherUser = currentUser === "Sayem" ? "Shajeda" : "Sayem";
@@ -3386,7 +3427,7 @@
         });
 
         // Listen for other user's presence state
-        const statusText = document.getElementById("statusText");
+        const statusIndicator = document.getElementById("statusIndicator");
         const lastSeenTimestamp = document.getElementById("lastSeenTimestamp");
         const lastSeenCountdown = document.getElementById("lastSeenCountdown");
 
@@ -3407,14 +3448,14 @@
             partnerDeviceEl.textContent = status === 'online' && partnerDevice && partnerDevice !== '' ? partnerDevice : 'NULL';
           }
 
-          // Update status text in masthead
-          if (statusText) {
+          // Update status indicator beside username
+          if (statusIndicator) {
             if (status === 'online') {
-              statusText.textContent = 'Online';
-              statusText.style.color = '#fff';
+              statusIndicator.textContent = 'ON';
+              statusIndicator.className = 'masthead-status online';
             } else {
-              statusText.textContent = 'Offline';
-              statusText.style.color = '#666';
+              statusIndicator.textContent = 'OFF';
+              statusIndicator.className = 'masthead-status offline';
             }
           }
 
@@ -3475,6 +3516,9 @@
             bubble.classList.add("deleted");
           }
 
+          // Shared flag for long-press vs click on image (must be declared before image block)
+          let longPressTriggered = false;
+
           // If this message has an image, inject the img element (only if not deleted)
           if (msg.imageUrl && !msg.deleted) {
             var mediaWrapper = document.createElement("div");
@@ -3491,20 +3535,17 @@
               mediaWrapper.style.marginBottom = "0px";
             }
 
-            // Add three-dot menu button for all messages (own and received)
-            var menuBtn = document.createElement("div");
-            menuBtn.className = "media-menu-btn";
-            menuBtn.innerHTML = '<i class="fa-solid fa-ellipsis"></i>';
-            menuBtn.addEventListener('click', (e) => {
-              e.stopPropagation();
-              showMessageActions(msg.id, bubble, e);
+            // Suppress browser native context menu on long press
+            imgEl.addEventListener('contextmenu', (e) => {
+              e.preventDefault();
             });
-            mediaWrapper.appendChild(menuBtn);
 
-            // Add click listener to open custom viewer
+            // Single click opens viewer; skipped if long press triggered the menu
             imgEl.addEventListener('click', (e) => {
-              // Don't open viewer if clicking the menu button
-              if (e.target.closest('.media-menu-btn')) return;
+              if (longPressTriggered) {
+                longPressTriggered = false;
+                return;
+              }
               openImageViewer(msg.imageUrl);
             });
 
@@ -3611,17 +3652,14 @@
             bubble.style.cursor = 'pointer';
             
             let longPressTimer = null;
-            let longPressTriggered = false;
             let startX = 0;
             let startY = 0;
             const moveThreshold = 10; // pixels - cancel long press if moved too much
             
             // Mouse events (desktop)
             bubble.addEventListener('mousedown', (e) => {
-              // Don't trigger on images, media wrapper, reaction badges, or reply context
-              if (e.target.classList.contains('bubble-attachment') ||
-                  e.target.closest('.media-wrapper') ||
-                  e.target.closest('.reaction-badges') ||
+              // Don't trigger on reaction badges or reply context
+              if (e.target.closest('.reaction-badges') ||
                   e.target.closest('.bubble-reply-context')) {
                 return;
               }
@@ -3665,10 +3703,8 @@
             
             // Touch events (mobile)
             bubble.addEventListener('touchstart', (e) => {
-              // Don't trigger on images, media wrapper, reaction badges, or reply context
-              if (e.target.classList.contains('bubble-attachment') ||
-                  e.target.closest('.media-wrapper') ||
-                  e.target.closest('.reaction-badges') ||
+              // Don't trigger on reaction badges or reply context
+              if (e.target.closest('.reaction-badges') ||
                   e.target.closest('.bubble-reply-context')) {
                 return;
               }
@@ -3880,20 +3916,6 @@
             actions.appendChild(editItem);
           }
 
-          // Delete option - only for own messages
-          if (isSent) {
-            const deleteItem = document.createElement('div');
-            deleteItem.className = 'message-action-item';
-            deleteItem.innerHTML = '<i class="fa-solid fa-trash"></i><span>Delete</span>';
-            deleteItem.onclick = async (e) => {
-              e.stopPropagation();
-              actions.remove();
-              activeMessageActions = null;
-              await deleteMessage(msgId);
-            };
-            actions.appendChild(deleteItem);
-          }
-
           document.body.appendChild(actions);
           activeMessageActions = actions;
 
@@ -3982,26 +4004,6 @@
             window.addEventListener('mousedown', closeActions);
             window.addEventListener('touchstart', closeActions);
           }, 0);
-        }
-
-        async function deleteMessage(msgId) {
-          const msgRef = ref(db, `messages/${msgId}`);
-          const originalMsg = allMessages.find(m => m.id === msgId);
-
-          if (!originalMsg) return;
-
-          // Mark as deleted instead of removing from database
-          const updates = {
-            ...originalMsg,
-            deleted: true,
-            deletedAt: serverTimestamp()
-          };
-
-          // Remove text and image if present
-          delete updates.text;
-          delete updates.imageUrl;
-
-          await set(msgRef, updates);
         }
 
         // ================= Image Attachment State =================
@@ -4621,11 +4623,11 @@
             skeletonDiv.className = "image-skeleton";
 
             // Calculate box visualization of image ratio
-            let skelW = 180;
-            let skelH = 180 / currentAttachedImageRatio;
-            if (skelH > 200) {
-              skelH = 200;
-              skelW = 200 * currentAttachedImageRatio;
+            let skelW = 240;
+            let skelH = 240 / currentAttachedImageRatio;
+            if (skelH > 280) {
+              skelH = 280;
+              skelW = 280 * currentAttachedImageRatio;
             }
             skeletonDiv.style.width = Math.round(skelW) + "px";
             skeletonDiv.style.height = Math.round(skelH) + "px";
